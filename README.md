@@ -1,6 +1,6 @@
 # 1. Cosmetics Sales Management System
 
-A database project developed for the *Database Principles and Applications* course, implementing a **cosmetics sales management system**. This system demonstrates relational database design, normalized schema, and key SQL features including views, stored procedures, triggers, and constraints.
+A database project developed for the *Database Principles and Applications* course, implementing a **cosmetics sales management system**. This system demonstrates relational database design, normalised schema, and key SQL features including views, stored procedures, triggers, and constraints.
 
 
 ## Project Overview
@@ -21,11 +21,11 @@ The system models real-world operations for a cosmetics retail company.
 - **Entities**: Products, Suppliers, Customers, Salespersons, Inventory, Sales Transactions  
 - **Relationships**: One-to-many between suppliers and products, customers and sales, products and inventory  
 - **Constraints**: Primary keys, foreign keys, check constraints (e.g., valid price ranges), default values  
-- **Views**: Provide summarized or filtered data for quick reporting  
+- **Views**: Provide summarised or filtered data for quick reporting  
 - **Stored Procedures**: Encapsulate common queries, e.g., retrieve product stock, sales records  
 - **Triggers**: Automated actions on data changes, such as logging or preventing invalid updates  
 
-The database schema is normalized to reduce redundancy and improve data integrity.
+The database schema is normalised to reduce redundancy and improve data integrity.
 
 
 ## Key Features
@@ -41,13 +41,13 @@ The database schema is normalized to reduce redundancy and improve data integrit
 
 - **Database Engine**: Microsoft SQL Server  
 - **SQL Concepts**: Tables, Relationships, Constraints, Views, Stored Procedures, Triggers  
-- **Design Methodologies**: ER modeling, relational schema normalization, multi-table joins  
+- **Design Methodologies**: ER modelling, relational schema normalisation, multi-table joins  
 
 
 ## Usage
 
 1. Open the provided database file in SQL Server Management Studio.  
-2. Run initialization scripts to create tables, relationships, and insert sample data.  
+2. Run initialisation scripts to create tables, relationships, and insert sample data.  
 3. Use views and stored procedures to explore data and generate reports.  
 4. Triggers demonstrate automated responses to changes in the database.  
 
@@ -77,21 +77,27 @@ A database project designed to manage **train ticket reservations** and passenge
 
 
 
-## 3. School Bus Management System
+## 3. Clothing Sales Management System
+**Description:**  
+A database project developed for the *Database Principles and Applications* course, implementing a **clothing sales management system**. This system manages inventory, suppliers, customers, sales, and warehouse operations for a clothing retail business.
 
-A database project for managing **school bus operations**, similar in design to the previous two projects.  
+**Core Functionalities:**
+- **Product Management** – tracking clothing items, colours, categories, pricing, and stock  
+- **Supplier Management** – managing supplier details and transactions  
+- **Customer Management** – storing customer data and purchase history  
+- **Sales & Inventory Management** – managing warehouse stock, sales orders, and inventory updates  
+- **Reporting & Analytics** – generating views and summaries of stock levels and sales performance  
 
-**Core Features:**
-- Tracks bus routes, students, drivers, and trip logs  
-- Records pick-up/drop-off data for students  
-- Supports multi-table queries for route planning and performance monitoring  
-- Uses constraints, views, stored procedures, and triggers to maintain data integrity  
+**Highlights:**
+- Relational database design with normalised tables for products, suppliers, customers, salespersons, and inventory  
+- Use of primary/foreign keys, check constraints, and default values to enforce data integrity  
+- Views, stored procedures, and triggers to support automated reporting, notifications, and validations  
+- Designed to model real-world operations of a clothing retail business  
 
-**Technologies Used:** SQL Server, relational database design, advanced SQL queries
 
 ---
 
 ## Notes
 - All projects are focused on **database design and backend functionality**.  
 - No frontend applications are included.  
-- Each project demonstrates core database design techniques, including relational modeling, use of constraints, and automation via SQL features, tailored to its specific domain and functionality.
+- Each project demonstrates core database design techniques, including relational modelling, use of constraints, and automation via SQL features, tailored to its specific domain and functionality.
