@@ -75,8 +75,6 @@ The project includes table structures, views, stored procedures, triggers, and c
 - Join `kh_info` and `sell` to show customer sales info  
 - Query employees with names starting with "Me"  
 
-
-
 ## Technology Stack
 - SQL Server
 - T-SQL
