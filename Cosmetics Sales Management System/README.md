@@ -6,7 +6,6 @@ It manages products, suppliers, customers, sales, warehouses, and employees.
 The project includes table creation, sample data insertion, constraints, views, stored procedures, and triggers.
 
 
-
 ## Database Structure
 
 ### Main Tables & Sample Data
