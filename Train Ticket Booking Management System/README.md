@@ -8,6 +8,7 @@ The database includes table creation, sample data insertion, primary keys, comme
 
 ## Database Structure
 
+
 ### Main Tables
 
 | Table | Description | Key Fields / Sample Data |
