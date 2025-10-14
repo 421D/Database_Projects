@@ -1,5 +1,5 @@
 # 1. Cosmetics Sales Management System
-Folder: [`PM25Studio_WeChat_MiniProgram`](./PM25Studio_WeChat_MiniProgram)
+Folder: [`Cosmetics Sales Management System`](./Cosmetics%20Sales%20Management%20System)
 
 A database project developed for the *Database Principles and Applications* course, implementing a **cosmetics sales management system**. This system demonstrates relational database design, normalised schema, and key SQL features including views, stored procedures, triggers, and constraints.
 
@@ -60,6 +60,7 @@ The main goal is to demonstrate robust database architecture, query design, and 
 
 ---
 ## 2. Train Ticket Booking Management System
+Folder: [`Train Ticket Booking Management System`](./Train%20Ticket%20Booking%20Management%20System)
 
 A database project designed to manage **train ticket reservations** and passenger information. It shares a similar structure and approach to the cosmetics project, focusing on backend functionality.
 
@@ -79,6 +80,8 @@ A database project designed to manage **train ticket reservations** and passenge
 
 
 ## 3. Clothing Sales Management System
+Folder: [`Clothing Sales Management System`](./Clothing%20Sales%20Management%20System)
+
 **Description:**  
 A database project developed for the *Database Principles and Applications* course, implementing a **clothing sales management system**. This system manages inventory, suppliers, customers, sales, and warehouse operations for a clothing retail business.
 
