@@ -1,4 +1,5 @@
 # 1. Cosmetics Sales Management System
+Folder: [`PM25Studio_WeChat_MiniProgram`](./PM25Studio_WeChat_MiniProgram)
 
 A database project developed for the *Database Principles and Applications* course, implementing a **cosmetics sales management system**. This system demonstrates relational database design, normalised schema, and key SQL features including views, stored procedures, triggers, and constraints.
 
