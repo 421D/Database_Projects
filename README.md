@@ -7,7 +7,7 @@
 # 1. Cosmetics Sales Management System
 Folder: [`Cosmetics Sales Management System`](./Cosmetics%20Sales%20Management%20System)
 
-A database project developed for the *Database Principles and Applications* course, implementing a **cosmetics sales management system**. This system demonstrates relational database design, normalised schema, and key SQL features including views, stored procedures, triggers, and constraints.
+A database project developed for the *Database Principles and Applications* course, implementing a **cosmetics sales management system**. This project demonstrates relational schema design, data normalisation, and key SQL functionalities such as views, stored procedures, triggers, and constraints.
 
 
 ## Project Overview
