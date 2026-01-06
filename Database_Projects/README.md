@@ -7,7 +7,7 @@ Each project emphasises **relational modelling**, **3NF/BCNF normalisation**, an
 
 
 ##  Technical Stack
-- **RDBMS:** Microsoft SQL Server  
+- **RDBMS:** SQL Server  
 - **Techniques:**  
   - **Modelling:** ER Diagramming, Logical Schema Design  
   - **Optimization:** Indexing, Data Normalization  
@@ -34,9 +34,4 @@ Models a retail clothing warehouse with emphasis on SKU attributes (colour, size
 - **Advanced Features:** Data integrity enforcement via Check Constraints and Foreign Key cascades, views and stored procedures for reporting  
 - **Data Integrity:** Normalized tables for products, suppliers, customers, sales, and inventory  
 
-
-```text
-1. Open the `.sql` scripts in SQL Server Management Studio (SSMS)
-2. Execute the initialization scripts to build the schema and seed sample data
-3. Use stored procedures and views to simulate real-world transactions
-4. Observe triggers for automated data validations or alerts
+---
