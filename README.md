@@ -38,7 +38,7 @@ A spreadsheet compute engine designed and implemented in Rust.
 **Core Technologies:**  
 Rust, Arc / Mutex / Condvar, mpsc channels, HashMap / HashSet
 
-See: - [Rust_project/README.md](./Rust_project/README.md)  
+See:  [Rust_project/README.md](./Rust_project/README.md)  
 
 
 ## ② Database Projects
@@ -57,4 +57,4 @@ Three independent database systems were developed using Microsoft SQL Server.
 **Core Focus Areas:**  
 Relational modelling, 3NF/BCNF normalisation, constraints, views, triggers, stored procedures
 
-See: - [Database_Projects/README.md](./Database_Projects/README.md)  
+See:  [Database_Projects/README.md](./Database_Projects/README.md)  
