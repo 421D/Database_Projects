@@ -1,13 +1,21 @@
 # RSheet
 
-**RSheet** is a spreadsheet compute engine I designed and implemented in **Rust** to explore **concurrent systems**, **reactive data propagation**, and **safe dependency tracking**.  
-This project demonstrates my skills in **multi-threaded programming**, **DAG-based dataflow**, and **version-controlled state management**—core competencies for high-performance backend systems.
+**RSheet** is a spreadsheet compute engine I designed and implemented in **Rust**, focusing on **concurrent execution**, **reactive data propagation**, and **dependency-aware computation**.
 
 ---
 
+##  Technical Stack
+
+- **Language:** Rust  
+- **Concurrency:** `Arc`, `Mutex`, `Condvar`, `mpsc` channels  
+- **Architecture:** DAG-based dependency graph, reactive dataflow  
+- **State Management:** Version-based write protection for concurrent updates  
+- **Core Logic:** Expression parsing, dependency tracking, automatic recomputation  
+- **Data Structures:** `HashMap`, `HashSet`  
+
+
+
 ## Core Architecture & Design
-
-
 
 ### 1. Expression & Parsing Engine
 - Supports **scalars**, **vectors** (`A1_A7`), and **matrices** (`B2_D10`)  
@@ -29,13 +37,10 @@ This project demonstrates my skills in **multi-threaded programming**, **DAG-bas
 - Implements **version-based write protection** to prevent stale data from overwriting newer values  
 
 
-
-##  Key Rust Skills Demonstrated
-- **Ownership & Borrowing:** Memory-safe design without a garbage collector  
-- **Concurrency:** Multi-threading with Mutex, Arc, Condvar, and channels  
-- **Data Structures:** HashMap and HashSet for efficient lookup and dependency management  
-- **Error Handling:** Propagation of parsing and computation errors in a controlled manner  
-- **Systems Thinking:** Designing a reactive, DAG-based engine from scratch  
+## Key Engineering Focus
+- Safe concurrent state management in Rust
+- DAG-based dependency resolution and recomputation
+- Robust parsing and error propagation
 
 
 
