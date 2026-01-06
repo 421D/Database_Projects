@@ -3,8 +3,6 @@
 A backend engineering portfolio showcasing my work in **systems programming** and **relational database design**.  
 This repository focuses on **concurrency**, **dependency management**, and **data integrity**, implemented through practical, non-trivial projects.
 
-
-
 ## Repository Structure
 
 - **Rust_project**
@@ -15,20 +13,21 @@ This repository focuses on **concurrency**, **dependency management**, and **dat
   - A collection of relational database systems designed for real-world domains
   - Emphasises schema design, normalisation, and advanced SQL logic
 
+- **Cloud_Fullstack_Projects**
+  - [Community Convenience Service System (WeChat Mini Program)](https://github.com/421D/fullstack_frontend-development/tree/main/WeChatMiniProgram_Projects/Community_WeChat_MiniProgram)  
+    Full-stack cloud development using **WeChat Cloud Functions**, serverless backend, NoSQL database, and real-time updates. Integrates a **community second-hand trading platform** with a **property management system**, demonstrating full backend automation and data-driven UI logic.
 
 ## Technical Focus
 
-- **Languages:** Rust, SQL (T-SQL)  
+- **Languages:** Rust, SQL (T-SQL), JavaScript (WeChat Mini Program)  
 - **Systems Engineering:** Concurrency, dependency graphs, reactive computation  
 - **Database Engineering:** Schema design, normalisation, integrity constraints  
-- **Backend Logic:** State management, automation, data consistency  
+- **Cloud / Backend Logic:** Serverless functions, cloud database management, automation, real-time synchronization
 
-
----
 
 ## Rust Project
 
-### RSheet – Concurrent Spreadsheet Engine
+### ① RSheet – Concurrent Spreadsheet Engine
 A spreadsheet compute engine designed and implemented in Rust.
 
 - DAG-based dependency tracking for cell relationships  
@@ -39,11 +38,10 @@ A spreadsheet compute engine designed and implemented in Rust.
 **Core Technologies:**  
 Rust, Arc / Mutex / Condvar, mpsc channels, HashMap / HashSet
 
-See: `Rust_project/README.md`
+See: - [Rust_project/README.md](./Rust_project/README.md)  
 
 
-
-## Database Projects
+## ② Database Projects
 
 Three independent database systems were developed using Microsoft SQL Server.
 
@@ -59,5 +57,4 @@ Three independent database systems were developed using Microsoft SQL Server.
 **Core Focus Areas:**  
 Relational modelling, 3NF/BCNF normalisation, constraints, views, triggers, stored procedures
 
-See: `Database_Projects/README.md`
-
+See: - [Database_Projects/README.md](./Database_Projects/README.md)  
