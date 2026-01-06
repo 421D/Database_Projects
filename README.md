@@ -7,11 +7,11 @@ This repository focuses on **concurrency**, **dependency management**, and **dat
 
 ## Repository Structure
 
-- **Rust_project/**
+- **Rust_project**
   - A concurrent, dependency-aware spreadsheet compute engine built in Rust
   - Focuses on multi-threading, reactive dataflow, and safe state management
 
-- **Database_Projects/**
+- **Database_Projects**
   - A collection of relational database systems designed for real-world domains
   - Emphasises schema design, normalisation, and advanced SQL logic
 
@@ -61,13 +61,3 @@ Relational modelling, 3NF/BCNF normalisation, constraints, views, triggers, stor
 
 See: `Database_Projects/README.md`
 
-
-
-## Purpose
-
-This repository reflects my approach to backend engineering:
-- Designing systems from first principles  
-- Prioritising correctness, data integrity, and concurrency safety  
-- Bridging low-level system logic with high-level data management
-
----
