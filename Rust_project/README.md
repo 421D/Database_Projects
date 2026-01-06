@@ -1,51 +1,59 @@
-# RSheet – Concurrent Dependency-Aware Spreadsheet Engine
+# RSheet
 
-RSheet is a high-performance spreadsheet compute engine built in **Rust**, handling complex expression evaluation and reactive data propagation using a multi-threaded, dependency-aware architecture.
+**RSheet** is a spreadsheet compute engine I designed and implemented in **Rust** to explore **concurrent systems**, **reactive data propagation**, and **safe dependency tracking**.  
+This project demonstrates my skills in **multi-threaded programming**, **DAG-based dataflow**, and **version-controlled state management**—core competencies for high-performance backend systems.
 
 ---
 
-## Core Architecture
+## Core Architecture & Design
 
-RSheet operates on a **Directed Acyclic Graph (DAG)** to manage cell relationships.
+
 
 ### 1. Expression & Parsing Engine
-- **Supported Types:** Scalars, Vectors (`A1_A7`), Matrices (`B2_D10`)  
-- **Parser:** Evaluates expressions like `A1 + B2 * 5` using the `CellExpr` API  
-- **CellArgument Mapping:** Automatically converts cell references to `CellArgument::Value`, `CellArgument::Vector`, or `CellArgument::Matrix`  
+- Supports **scalars**, **vectors** (`A1_A7`), and **matrices** (`B2_D10`)  
+- Custom `CellExpr` parser evaluates expressions like `A1 + B2 * 5`  
+- Converts cell references into `CellArgument` variants (`Value`, `Vector`, `Matrix`) for unified processing  
 
 ### 2. Reactive Dependency Tracking
-- **Dependents Map:** Tracks which cells rely on the current cell  
-- **Uses Sources Map:** Tracks which cells the current cell depends on  
-- **Logic:** On `SET`, old dependencies are removed, new dependencies inserted, and downstream cells recomputed  
+- Maintains two synchronised maps:
+  - `dependents` – which cells depend on a given cell  
+  - `uses_sources` – which cells a given cell depends on  
+- On `SET`, the engine:
+  1. Removes outdated dependencies  
+  2. Updates the dependency graph  
+  3. Propagates recomputation downstream in correct topological order  
 
 ### 3. Multi-threaded Worker Model
-- **Communication:** Tasks dispatched via `mpsc` channels  
-- **Concurrency:** Shared state managed with `Arc<Mutex<T>>` and `Condvar`  
-- **Conflict Prevention:** Version-based write protection ensures stale updates do not overwrite newer values  
+- Handles **parallel updates** via a dedicated worker thread  
+- Uses **Rust concurrency primitives**: `Arc<Mutex<T>>` and `Condvar` for safe shared state  
+- Implements **version-based write protection** to prevent stale data from overwriting newer values  
 
 
 
-## Key Rust Features
-- Ownership & Borrowing guarantees memory safety without a garbage collector  
-- Multi-threading with `Mutex`, `Arc`, `Condvar`, and channels  
-- Efficient lookups using `HashMap` and `HashSet`  
-- Robust error handling for calculation and parsing errors  
+##  Key Rust Skills Demonstrated
+- **Ownership & Borrowing:** Memory-safe design without a garbage collector  
+- **Concurrency:** Multi-threading with Mutex, Arc, Condvar, and channels  
+- **Data Structures:** HashMap and HashSet for efficient lookup and dependency management  
+- **Error Handling:** Propagation of parsing and computation errors in a controlled manner  
+- **Systems Thinking:** Designing a reactive, DAG-based engine from scratch  
 
 
 
-## Usage
+##  How to Run & Test
+
+Clone and run the engine:
 
 ```bash
-# Clone repository
 git clone <repo-url>
 cd Rust_project
-
-# Run the engine
 cargo run
-
+```
+Example Interactive Commands:
 ```
 SET A1 5
 SET B1 A1*2
 GET B1
+```
 
----
+- `SET <cell> <expression>` – update a cell’s value
+- `GET <cell>` – retrieve the current value, automatically computed with dependencies
