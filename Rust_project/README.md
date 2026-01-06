@@ -1,97 +1,51 @@
-# 📊 RSheet – Concurrent, Dependency-Aware Spreadsheet Engine (Rust)
+# RSheet – Concurrent Dependency-Aware Spreadsheet Engine
 
-A high-performance spreadsheet backend implemented in **Rust**, supporting **multi-threaded updates**, **dependency tracking**, **expression parsing**, and **version-based conflict prevention**.  
-Designed as a robust systems-engineering project demonstrating strong concurrency, dataflow, and backend logic skills.
-
----
-
-## 🚀 Overview
-
-RSheet functions as a real spreadsheet **compute engine**, capable of:
-
-- Evaluating expressions like `A1 + B2 * 5`
-- Parsing ranges into vectors/matrices (`A1_A5`, `B2_D4`)
-- Tracking dependencies between cells
-- Safely propagating updates across dependent cells
-- Running concurrent background workers
-- Preventing outdated writes from overriding newer values using version numbers
-- Handling GET/SET commands over terminal or network
-
-Built in pure Rust using standard libraries:
-
-- `Arc`, `Mutex`, `Condvar`
-- `mpsc` channels
-- `HashMap`, `HashSet`
+RSheet is a high-performance spreadsheet compute engine built in **Rust**, handling complex expression evaluation and reactive data propagation using a multi-threaded, dependency-aware architecture.
 
 ---
 
-## 🔑 Key Features
+## Core Architecture
 
-### ✔ 1. Full Expression Parsing
-Supports:
+RSheet operates on a **Directed Acyclic Graph (DAG)** to manage cell relationships.
 
-- Single cell refs: `A1`, `B7`
-- Ranges:
-  - Column vectors: `A1_A7`
-  - Row vectors: `C3_F3`
-  - Matrices: `B2_D10`
-- Scalars, vectors, and matrices are converted into:
-  - `CellArgument::Value`
-  - `CellArgument::Vector`
-  - `CellArgument::Matrix`
+### 1. Expression & Parsing Engine
+- **Supported Types:** Scalars, Vectors (`A1_A7`), Matrices (`B2_D10`)  
+- **Parser:** Evaluates expressions like `A1 + B2 * 5` using the `CellExpr` API  
+- **CellArgument Mapping:** Automatically converts cell references to `CellArgument::Value`, `CellArgument::Vector`, or `CellArgument::Matrix`  
 
-Expressions are evaluated through the `CellExpr` API.
+### 2. Reactive Dependency Tracking
+- **Dependents Map:** Tracks which cells rely on the current cell  
+- **Uses Sources Map:** Tracks which cells the current cell depends on  
+- **Logic:** On `SET`, old dependencies are removed, new dependencies inserted, and downstream cells recomputed  
+
+### 3. Multi-threaded Worker Model
+- **Communication:** Tasks dispatched via `mpsc` channels  
+- **Concurrency:** Shared state managed with `Arc<Mutex<T>>` and `Condvar`  
+- **Conflict Prevention:** Version-based write protection ensures stale updates do not overwrite newer values  
+
+
+
+## Key Rust Features
+- Ownership & Borrowing guarantees memory safety without a garbage collector  
+- Multi-threading with `Mutex`, `Arc`, `Condvar`, and channels  
+- Efficient lookups using `HashMap` and `HashSet`  
+- Robust error handling for calculation and parsing errors  
+
+
+
+## Usage
+
+```bash
+# Clone repository
+git clone <repo-url>
+cd Rust_project
+
+# Run the engine
+cargo run
+
+```
+SET A1 5
+SET B1 A1*2
+GET B1
 
 ---
-
-### ✔ 2. Dependency Graph With Auto-Propagation
-Maintains two synchronized maps:
-
-| Map | Meaning |
-|-----|---------|
-| `dependents` | Which cells depend on me |
-| `uses_sources` | Which cells I depend on |
-
-Whenever `SET` happens:
-
-1. Old dependencies are removed  
-2. New dependencies are inserted  
-3. All dependents are queued for re-evaluation  
-4. Worker recomputes them in the correct order
-
-A classic DAG-based spreadsheet architecture.
-
----
-
-### ✔ 3. Multi-threaded Worker With Safe Concurrency
-
-A worker thread receives `(cell_key, seq)` tasks through:
-
-```rust
-mpsc::channel::<(String, u64)>
-```
-It performs:
-
-Expression evaluation
-
-Error propagation
-
-Version-checking
-
-Dependency scheduling
-
-Uses Rust concurrency primitives:
-```
-Arc<Mutex<Shared>>
-Mutex<WorkerState>
-Condvar
-```
-Ensures no data races and correct synchronization.
-
-✔ 4. Version-Based Write Protection (Anti-race Condition)
-
-Every cell has a version counter:
-```
-versions: HashMap<String, u64>
-```
-
